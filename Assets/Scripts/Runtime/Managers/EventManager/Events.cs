@@ -6,7 +6,8 @@ public class Events : MonoBehaviour { }
 
 public class OnGameStateChanged : CanerEvent<GameManager.State> { }
 
-public class OnGridCenterPositionDetermined : CanerEvent<Vector3> { }
-public class OnLeftClickInputGiven : CanerEvent<Vector2> { }
-public class OnRightClickInputGiven : CanerEvent<Vector2> { }
-public class OnMousePositionGiven : CanerEvent<Vector2> { }
+public class OnCreatedGridDataDetermined : CanerEvent<CreatedGridData> { }
+public class OnLeftClickInputGiven : CanerEvent<Vector3> { }
+public class OnRightClickInputGiven : CanerEvent<Vector3> { }
+public class OnMouseWorldPositionGiven : CanerEvent<Vector3> { }
+public class OnMouseScreenPositionGive: CanerEvent<Vector3> { }

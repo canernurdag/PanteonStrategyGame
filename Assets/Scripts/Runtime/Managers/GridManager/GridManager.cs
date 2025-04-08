@@ -8,7 +8,7 @@ public sealed class GridManager : Singleton<GridManager>
 	#endregion
 
 	#region INTERNAL VARIABLES
-	private OnGridCenterPositionDetermined _onGridCenterPositionDetermined;
+	private OnCreatedGridDataDetermined _onGridCenterPositionDetermined;
 
 
 	public int width = 20;
@@ -16,7 +16,6 @@ public sealed class GridManager : Singleton<GridManager>
 	public float cellSize = 1f;
 
 	private Node[,] _grid;
-	private Vector3 _gridCenterPosition;
 
 	#endregion
 
@@ -30,10 +29,8 @@ public sealed class GridManager : Singleton<GridManager>
 
 	private void Start()
 	{
-		_onGridCenterPositionDetermined = EventManager.Instance.GetEvent<OnGridCenterPositionDetermined>();
-
-		_gridCenterPosition = GetGridCenterPosition();
-		_onGridCenterPositionDetermined.Execute(_gridCenterPosition);
+		_onGridCenterPositionDetermined = EventManager.Instance.GetEvent<OnCreatedGridDataDetermined>();
+		_onGridCenterPositionDetermined.Execute(GetCreatedGridData());
 	}
 
 
@@ -52,7 +49,7 @@ public sealed class GridManager : Singleton<GridManager>
 		}
 	}
 
-	private Vector3 GetGridCenterPosition()
+	private CreatedGridData GetCreatedGridData()
 	{
 		Vector3 centerPos = Vector3.zero;
 		int width = _grid.GetLength(0);
@@ -68,7 +65,18 @@ public sealed class GridManager : Singleton<GridManager>
 		}
 
 		int totalNodeCount = width * height;
-		return centerPos / (float)totalNodeCount;
+		centerPos /= (float)totalNodeCount;
+
+		var firstNode = _grid[0, 0];
+		var lastNode = _grid[width - 1, height - 1];
+
+		CreatedGridData createdGridData = new CreatedGridData(centerPos, 
+			firstNode.transform.position.x,
+			firstNode.transform.position.y, 
+			lastNode.transform.position.x,
+			lastNode.transform.position.y);
+
+		return createdGridData;
 	}
 
 	public Node GetNodeFromWorldPosition(Vector3 worldPosition)
