@@ -11,3 +11,4 @@ public class OnLeftClickInputGiven : CanerEvent<Vector3> { }
 public class OnRightClickInputGiven : CanerEvent<Vector3> { }
 public class OnMouseWorldPositionGiven : CanerEvent<Vector3> { }
 public class OnMouseScreenPositionGive: CanerEvent<Vector3> { }
+public class OnBuildingUiSelected : CanerEvent<BuildingDataSO> { }
