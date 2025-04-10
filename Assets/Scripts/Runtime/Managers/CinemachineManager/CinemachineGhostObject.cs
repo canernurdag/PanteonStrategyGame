@@ -6,25 +6,34 @@ public sealed class CinemachineGhostObject : MonoBehaviour
 {
 	#region REF
 	private OnCreatedGridDataDetermined _onCreatedGridDataDetermined;
-	private OnMouseScreenPositionGive _onMouseScreenPositionGiven;
+	private OnMouseScreenPositionGiven _onMouseScreenPositionGiven;
 	private CreatedGridData _createdGridData;
+	private Camera _mainCamera;
 	#endregion
 
 	#region INTERNAL VAR
 	private Tween _moveTween;
 	[SerializeField] private float _edgeSize = 30f;
 	[SerializeField] private float _moveAmount = 100f;
+	private float _cameraRenderHorizontalDistanceHalf, _cameraRenderVerticalDistanceHalf;
 	#endregion
+
+	private void Awake()
+	{
+		_mainCamera = Camera.main;
+	}
+
 
 	private void Start()
 	{
-
 		_onCreatedGridDataDetermined = EventManager.Instance.GetEvent<OnCreatedGridDataDetermined>();
-		_onMouseScreenPositionGiven = EventManager.Instance.GetEvent<OnMouseScreenPositionGive>();
+		_onMouseScreenPositionGiven = EventManager.Instance.GetEvent<OnMouseScreenPositionGiven>();
 
 
 		_onCreatedGridDataDetermined.AddListener(HandleCreatedGridData);
 		_onMouseScreenPositionGiven.AddListener(MoveOnScreenEdges);
+
+		SetCameraRenderDistancesInWorldSpace();
 	}
 
 	private void OnDestroy()
@@ -32,6 +41,13 @@ public sealed class CinemachineGhostObject : MonoBehaviour
 
 		_onCreatedGridDataDetermined.RemoveListener(HandleCreatedGridData);
 		_onMouseScreenPositionGiven.RemoveListener(MoveOnScreenEdges);
+	}
+
+	private void SetCameraRenderDistancesInWorldSpace()
+	{
+		_cameraRenderVerticalDistanceHalf = _mainCamera.orthographicSize;
+		float aspectRatio = (float)Screen.width / (float)Screen.height;
+		_cameraRenderHorizontalDistanceHalf = _cameraRenderVerticalDistanceHalf * aspectRatio;
 	}
 
 	public void MoveOnScreenEdges(Vector3 mouseScreenPos)
@@ -85,10 +101,10 @@ public sealed class CinemachineGhostObject : MonoBehaviour
 
 	private bool IsTargetPosInBounds(Vector3 targetPos)
 	{
-		return targetPos.x >= _createdGridData.MinX &&
-			targetPos.y >= _createdGridData.MinY &&
-			targetPos.x < _createdGridData.MaxX &&
-			targetPos.y < _createdGridData.MaxY;
+		return targetPos.x >= _createdGridData.MinX + _cameraRenderHorizontalDistanceHalf &&
+			targetPos.y >= _createdGridData.MinY + _cameraRenderVerticalDistanceHalf &&
+			targetPos.x < _createdGridData.MaxX - _cameraRenderHorizontalDistanceHalf+1 &&
+			targetPos.y < _createdGridData.MaxY - _cameraRenderVerticalDistanceHalf+1;
 	}
 
 	public void HandleCreatedGridData(CreatedGridData createdGridData)
