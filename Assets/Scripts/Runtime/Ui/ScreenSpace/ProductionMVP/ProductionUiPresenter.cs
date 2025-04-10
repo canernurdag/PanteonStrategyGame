@@ -23,7 +23,7 @@ public class ProductionUiPresenter : MonoBehaviour
 	private bool _isDragUpward;
 	#endregion
 
-	private void Awake()
+	private void Start()
 	{
 		Init();
 	}
