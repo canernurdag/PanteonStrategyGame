@@ -849,7 +849,7 @@ MonoBehaviour:
   <ScroolRect>k__BackingField: {fileID: 1345129099}
   <ViewPortTransform>k__BackingField: {fileID: 805138355}
   <ContentTransform>k__BackingField: {fileID: 604857614}
-  <GridLayoutGroup>k__BackingField: {fileID: 604857617}
+  <GridLayoutGroup>k__BackingField: {fileID: 0}
 --- !u!1 &477321213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1398,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 604857613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Script: {fileID: 11500000, guid: e68ce302dbc4a1849abc9c6cad6a1099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
@@ -1406,13 +1406,16 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 150, y: 150}
+  m_CellSize: {x: 147.79999, y: Infinity}
   m_Spacing: {x: 50, y: 50}
   m_Constraint: 1
   m_ConstraintCount: 2
+  m_OffAxisScaling: 0
+  m_OffAxisCount: 1
+  m_OffAxisAspectRatio: 1
 --- !u!1 &620926752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,7 +1501,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.3
+  m_fontSize: 46.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

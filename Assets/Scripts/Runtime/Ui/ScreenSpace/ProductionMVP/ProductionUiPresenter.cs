@@ -31,7 +31,7 @@ public class ProductionUiPresenter : MonoBehaviour
 	private void Init()
 	{
 		//Get Scroll Height
-		_scrollHeight = _productionView.ScroolRect.GetComponent<RectTransform>().rect.height;
+		_scrollHeight = Screen.height;
 		
 		//Get Row Count By ScrollHeight
 		var rowCount = Mathf.CeilToInt(_scrollHeight / (_productionModel.ProductionUiDesignDataSO.ItemDimensionsInPixels.y + _productionModel.ProductionUiDesignDataSO.ItemSpaceY));
