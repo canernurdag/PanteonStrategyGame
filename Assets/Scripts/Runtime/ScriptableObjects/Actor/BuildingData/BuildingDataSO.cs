@@ -9,6 +9,6 @@ public class BuildingDataSO : ScriptableObject
 	public int DimensionHorizontal;
 	public int DimensionVertical;
 	public float InitHealth;
-	public List<InterfaceReference<IProduct>> Products = new();
+	public List<ProductDataSO> ProductDatas = new();
 }
 
