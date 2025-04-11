@@ -23,8 +23,6 @@ public sealed class GridManager : Singleton<GridManager>
 	{
 		base.Awake();
 		CreateGrid();
-
-		
 	}
 
 	private void Start()
@@ -32,8 +30,6 @@ public sealed class GridManager : Singleton<GridManager>
 		_onGridCenterPositionDetermined = EventManager.Instance.GetEvent<OnCreatedGridDataDetermined>();
 		_onGridCenterPositionDetermined.Execute(GetCreatedGridData());
 	}
-
-
 
 	private void CreateGrid()
 	{
