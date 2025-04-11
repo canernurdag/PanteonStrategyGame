@@ -181,6 +181,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1891442691628021449, guid: 8c51fa69821c879488917956784b5015, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891442691628021449, guid: 8c51fa69821c879488917956784b5015, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.82
+      objectReference: {fileID: 0}
     - target: {fileID: 2110166076893623143, guid: 8c51fa69821c879488917956784b5015, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 1.49
@@ -205,6 +213,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2514733417810737335, guid: 8c51fa69821c879488917956784b5015, type: 3}
+      propertyPath: <Building>k__BackingField
+      value: 
+      objectReference: {fileID: 1306405452116827800}
     - target: {fileID: 3167518737310711312, guid: 8c51fa69821c879488917956784b5015, type: 3}
       propertyPath: m_IsActive
       value: 1

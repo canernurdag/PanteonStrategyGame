@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 486287364628790455, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
+      propertyPath: _unit
+      value: 
+      objectReference: {fileID: 6689820192720842415}
+    - target: {fileID: 486287364628790455, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
+      propertyPath: _placeable.underlyingValue
+      value: 
+      objectReference: {fileID: 1185016226549844865}
     - target: {fileID: 2614242420231975488, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -65,6 +73,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4416616376036822730, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
       propertyPath: _unit
+      value: 
+      objectReference: {fileID: 6689820192720842415}
+    - target: {fileID: 4416616376036822730, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
+      propertyPath: <Unit>k__BackingField
       value: 
       objectReference: {fileID: 6689820192720842415}
     - target: {fileID: 8713388970000812909, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}

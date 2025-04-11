@@ -2,15 +2,56 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class UnitAsMovable : MonoBehaviour, IUnitMovable
 {
+	#region DIRECT REF
+	[SerializeField] private Unit _unit;
+	[SerializeField] private InterfaceReference<IPlaceable> _placeable;
+	#endregion
+
+	#region REF
+	private OnUnitMoveCommand _onUnitMoveCommand;
+	#endregion
+
 	#region INTERNAL VAR
 	private Tween _moveTween;
-
 	public Transform Transform => throw new NotImplementedException();
 	#endregion
+
+	private void Start()
+	{
+		_onUnitMoveCommand = EventManager.Instance.GetEvent<OnUnitMoveCommand>();
+		_onUnitMoveCommand.AddListener(Move);
+	}
+
+	private void OnDestroy()
+	{
+		_onUnitMoveCommand.RemoveListener(Move);
+	}
+
+	public void Move(Unit unit, Node targetNode)
+	{
+		Node startNode = _placeable.Value.OccupyingNodes[0];
+		_placeable.Value.Deplace();
+
+		Node currentNode = GridManager.Instance.GetNodeFromWorldPosition(transform.position);
+
+		var path = PathfindingManager.Instance.GetPath(currentNode, targetNode)
+			.Select(x=>x.transform.position)
+			.ToArray();
+		float speed = 10;
+
+		Move(path, speed, () =>
+		{ 
+			_placeable.Value.SetOccupyingNodes(new List<Node> { targetNode });
+			_placeable.Value.Place(); 
+		});
+
+		//Move();
+	}
 
 	public void Move(Vector3 targetPosition, float duration, Action callback = null)
 	{
@@ -25,6 +66,7 @@ public class UnitAsMovable : MonoBehaviour, IUnitMovable
 		_moveTween?.Kill();
 		_moveTween = transform.DOPath(path, duration, pathType: PathType.Linear, pathMode:PathMode.Sidescroller2D)
 			.SetEase(Ease.Linear)
+			.SetSpeedBased()
 			.OnComplete(() => callback?.Invoke());
 	}
 }

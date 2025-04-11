@@ -6,6 +6,7 @@ public class BuildingAsSelectable : MonoBehaviour, ISelectable
 {
 	#region DIRECT REF
 	[SerializeField] private Building _building;
+	[field: SerializeField]public InterfaceReference<IPlaceable> Placeable { get; private set; }
 	#endregion
 
 	#region REF
@@ -15,6 +16,8 @@ public class BuildingAsSelectable : MonoBehaviour, ISelectable
 
 	#region INTERNAL VARIABLES
 	public bool IsSelected { get; protected set; }
+
+
 	#endregion
 
 	private void Start()

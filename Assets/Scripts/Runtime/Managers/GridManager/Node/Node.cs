@@ -10,14 +10,15 @@ public class Node : MonoBehaviour
 	public int X { get; private set; } = 0;
 	public int Y { get; private set; } = 0;
 	public Vector3 WorldPosition { get; private set; } = Vector3.zero;
+	public Node Parent { get; set; }
 	public bool IsOccupied { get; private set; } = false;
 	public IPlaceable InsidePlaceable { get; private set; } = null;
+	public IPlaceable InsideFlagSpawnPoint { get; private set; } = null;
 	#endregion
 
 	#region A*PATHFINDING
-	public int GCost { get; private set; } = 0;
-	public int HCost { get; private set; } = 0;
-
+	public int GCost { get; set; } = 0;
+	public int HCost { get; set; } = 0;
 	public int FCost => GCost + HCost;
 	#endregion
 	public void Init(int x, int y, Vector3 worldPos, Transform parent)
@@ -37,6 +38,11 @@ public class Node : MonoBehaviour
 	public void SetInsidePlaceable(IPlaceable placeable)
 	{
 		InsidePlaceable = placeable;
+	}
+
+	public void SetInsideFlagSpawnPoint(FlagSpawnPoint flagSpawnPoint)
+	{
+		InsideFlagSpawnPoint = flagSpawnPoint;
 	}
 
 	public void ResetNodeVisual()

@@ -19,7 +19,7 @@ public class UnitAsPlaceable : MonoBehaviour, IPlaceable
 	public bool IsPlaced { get; protected set; }
 	#endregion
 
-	public void SetAsPlaced()
+	public void Place()
 	{
 		IsPlaced = true;
 
@@ -27,6 +27,18 @@ public class UnitAsPlaceable : MonoBehaviour, IPlaceable
 		{
 			x.SetIsOccupied(true);
 			x.SetInsidePlaceable(this);
+		});
+	}
+
+
+	public void Deplace()
+	{
+		IsPlaced = false;
+
+		OccupyingNodes.ForEach(x =>
+		{
+			x.SetIsOccupied(false);
+			x.SetInsidePlaceable(null);
 		});
 	}
 

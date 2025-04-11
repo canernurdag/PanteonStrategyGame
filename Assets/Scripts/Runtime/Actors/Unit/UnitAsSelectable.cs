@@ -5,7 +5,8 @@ using UnityEngine;
 public class UnitAsSelectable : MonoBehaviour, ISelectable
 {
 	#region DIRECT REF
-	[SerializeField] private Unit _unit;
+	[field:SerializeField] public Unit Unit { get; private set; }
+	[field: SerializeField] public InterfaceReference<IPlaceable> Placeable { get; private set; }
 	#endregion
 
 	#region REF
@@ -26,7 +27,7 @@ public class UnitAsSelectable : MonoBehaviour, ISelectable
 	public void Select()
 	{
 		IsSelected = true;
-		_onUnitSelected.Execute(_unit);
+		_onUnitSelected.Execute(Unit);
 	}
 	public void Deselect()
 	{

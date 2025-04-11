@@ -12,17 +12,13 @@ public class BuildingAsPlaceable : MonoBehaviour, IPlaceable
 
 	#region INTERNAL VAR
 	public List<Node> OccupyingNodes { get; private set; } = new();
-
-
+	public bool IsPlaced { get; protected set; }
 	#endregion
 	#region REF
 	public Transform Transform => transform;
 	private OnBuildingPlaced _onBuildingPlaced;
 	#endregion
 
-	#region INTERNAL VARIABLES
-	public bool IsPlaced { get; protected set; }
-	#endregion
 
 	private void Start()
 	{
@@ -35,7 +31,7 @@ public class BuildingAsPlaceable : MonoBehaviour, IPlaceable
 	{
 		_onBuildingPlaced.RemoveListener(ExecutePlacementSequence);
 	}
-	public void SetAsPlaced()
+	public void Place()
 	{
 		IsPlaced = true;
 
@@ -55,11 +51,24 @@ public class BuildingAsPlaceable : MonoBehaviour, IPlaceable
 
 		OccupyingNodes = GridManager.Instance.GetNodesByBuilding(placeNode, _building);
 		SetOccupyingNodes(OccupyingNodes);
-		SetAsPlaced();
+		Place();
 	}
 
 	public void SetOccupyingNodes(List<Node> occupyingNodes)
 	{
 		OccupyingNodes = occupyingNodes;
+	}
+
+	public void Deplace()
+	{
+		IsPlaced = true;
+
+		OccupyingNodes.ForEach(x =>
+		{
+			x.SetIsOccupied(false);
+			x.SetInsidePlaceable(null);
+			x.ResetNodeVisual();
+
+		}); ;
 	}
 }

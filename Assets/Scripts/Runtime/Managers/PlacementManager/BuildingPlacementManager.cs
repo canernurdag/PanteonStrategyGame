@@ -39,7 +39,7 @@ public class BuildingPlacementManager : Singleton<BuildingPlacementManager>
 		_onMouseWorldPositionGiven.AddListener(SetCandidatePosition);
 		_onMouseWorldPositionGiven.AddListener(ManipulateNodesUnderCandidate);
 		_onLeftClickInputGiven.AddListener(PlaceCandidate);
-		_onRightClickInputGiven.AddListener(HandleRightClick);
+		_onRightClickInputGiven.AddListener(CancelLastCandidate);
 	}
 
 
@@ -49,7 +49,7 @@ public class BuildingPlacementManager : Singleton<BuildingPlacementManager>
 		_onMouseWorldPositionGiven.RemoveListener(SetCandidatePosition);
 		_onMouseWorldPositionGiven.RemoveListener(ManipulateNodesUnderCandidate);
 		_onLeftClickInputGiven.RemoveListener(PlaceCandidate);
-		_onRightClickInputGiven.RemoveListener(HandleRightClick);
+		_onRightClickInputGiven.RemoveListener(CancelLastCandidate);
 	}
 
 	public void ExecutePlacementCandidateBuildingCreateSequence(BuildingDataSO selectedBuildingData)
@@ -152,7 +152,7 @@ public class BuildingPlacementManager : Singleton<BuildingPlacementManager>
 		ResetCandidateVariables();
 	}
 
-	private void HandleRightClick(Vector3 inputPosition)
+	private void CancelLastCandidate(Vector3 inputPosition)
 	{
 		ResetCandidatePreviousNodes();
 		DestroyLastCandidate();

@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7071909650459012082}
   - component: {fileID: 6556565926665430412}
   m_Layer: 0
-  m_Name: BuildingSpawnPoint
+  m_Name: FlagSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,3 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0245da6ad66d5c042890a52ab087d09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Building>k__BackingField: {fileID: 0}
+  <Selectable>k__BackingField:
+    underlyingValue: {fileID: 6556565926665430412}
+  <Placeable>k__BackingField:
+    underlyingValue: {fileID: 6556565926665430412}

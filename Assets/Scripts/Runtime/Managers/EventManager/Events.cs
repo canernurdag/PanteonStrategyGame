@@ -17,8 +17,10 @@ public class OnBuildingDeselected : CanerEvent { }
 public class OnBuildingPlaced : CanerEvent<Building, Node> { }
 public class OnUnitSelected : CanerEvent<Unit> { }
 public class OnUnitDeselected : CanerEvent { }
+public class OnFlagSelected : CanerEvent<FlagSpawnPoint> { }
+public class OnFlagDeselected :CanerEvent<FlagSpawnPoint> { }
 public class OnDamagableHealthChanged : CanerEvent<DamagableHealthModel> { }
 public class OnPreventSelectionChanged : CanerEvent<bool> { }
-
+public class OnUnitMoveCommand : CanerEvent<Unit, Node> { }
 
 

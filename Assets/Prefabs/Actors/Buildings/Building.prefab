@@ -94,6 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _building: {fileID: 0}
+  <Placeable>k__BackingField:
+    underlyingValue: {fileID: 1363703985374901053}
 --- !u!114 &1363703985374901053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitFactories: []
   _building: {fileID: 0}
-  _buildingSpawnPoint: {fileID: 2514733417810737335}
+  _flagSpawnPoint: {fileID: 2514733417810737335}
   _initSpawnPos: {fileID: 6273546179437304208}
   _buildingAsPlaceable: {fileID: 1363703985374901053}
 --- !u!1 &2957350843730607057
@@ -394,7 +396,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2474708668068773684, guid: d75b4ca0850d8c34eae09a85b75c2926, type: 3}
       propertyPath: m_Name
-      value: BuildingSpawnPoint
+      value: FlagSpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 2474708668068773684, guid: d75b4ca0850d8c34eae09a85b75c2926, type: 3}
       propertyPath: m_IsActive
