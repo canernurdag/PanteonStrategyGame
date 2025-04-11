@@ -21,7 +21,6 @@ public abstract class Unit : MonoBehaviour, IPoolable
 	{
 		Damagable.Value.SetInitHealth(UnitDataSO.InitHealth);
 		Damagable.Value.SetCurrentHealth(UnitDataSO.InitHealth);
-		UnitAsAttacker.Value.SetDamageAmount(UnitDataSO.DamagePerAttack);
 	}
 	public void SetUnitDataSo(UnitDataSO unitDataSO)
 	{

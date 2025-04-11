@@ -82,7 +82,7 @@ public class BuildingAsUnitProducer : MonoBehaviour,IUnitProducer
 
 	public void MoveProducedUnitToFirstNode(Unit unit, Node firstNode, Action callback)
 	{
-		unit.UnitAsMovable.Value.Move(firstNode.transform.position, 0.5f, callback); 
+		unit.UnitAsMovable.Value.Move(firstNode.transform.position, unit.UnitDataSO.MoveSpeedOnPath, callback); 
 	}
 
 	private void PlaceUnitToInitPosition(Unit unit)

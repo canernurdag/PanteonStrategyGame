@@ -12,6 +12,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 148743404113039416}
     - target: {fileID: 486287364628790455, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
+      propertyPath: _unitDataSO
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ce1a6791a26114ba06242d3e975b4f, type: 2}
+    - target: {fileID: 486287364628790455, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
       propertyPath: _placeable.underlyingValue
       value: 
       objectReference: {fileID: 383187022208541216}

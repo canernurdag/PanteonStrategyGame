@@ -18,3 +18,5 @@ MonoBehaviour:
   SpriteName: Shot_Blue
   InitHealth: 10
   DamagePerAttack: 5
+  AttackSpeed: 10
+  MoveSpeedOnPath: 10

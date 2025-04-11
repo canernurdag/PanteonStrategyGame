@@ -6,10 +6,8 @@ public class UnitAsAttacker : MonoBehaviour, IAttacker
 {
 	[SerializeField] private Transform _muzzlePos;
 	[SerializeField] private BulletFactory bulletFactory;
+	[SerializeField] private UnitDataSO _unitDataSO;
 
-	#region INTERNAL
-	private float _damageAmount;
-	#endregion
 	public Transform Transform => transform;
 
 	public void Attack(IDamagable damageable)
@@ -17,12 +15,8 @@ public class UnitAsAttacker : MonoBehaviour, IAttacker
 		var bullet = bulletFactory.CreateBullet();
 		bullet.Throw(_muzzlePos.position,
 			damageable.Transform.position,
-			10,
-			() => damageable.Damage(_damageAmount));
+			_unitDataSO.AttackSpeed,
+			() => damageable.Damage(_unitDataSO.DamagePerAttack));
 	}
 
-	public void SetDamageAmount(float damageAmount)
-	{
-		_damageAmount = damageAmount;
-	}
 }

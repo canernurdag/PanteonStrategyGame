@@ -10,6 +10,7 @@ public class UnitAsMovable : MonoBehaviour, IUnitMovable
 	#region DIRECT REF
 	[SerializeField] private Unit _unit;
 	[SerializeField] private InterfaceReference<IPlaceable> _placeable;
+	[SerializeField] private UnitDataSO _unitDataSO;
 	#endregion
 
 	#region REF
@@ -47,9 +48,8 @@ public class UnitAsMovable : MonoBehaviour, IUnitMovable
 		var path = nodePath
 			.Select(x=>x.transform.position)
 			.ToArray();
-		float speed = 10;
 
-		Move(path, speed, () =>
+		Move(path, _unitDataSO.MoveSpeedOnPath, () =>
 		{ 
 			_placeable.Value.SetOccupyingNodes(new List<Node> { targetNode });
 			_placeable.Value.Place(); 
@@ -69,30 +69,30 @@ public class UnitAsMovable : MonoBehaviour, IUnitMovable
 		var path = nodePath
 			.Select(x => x.transform.position)
 			.ToArray();
-		float speed = 10;
 
 		targetNode.SetPreventPlaceableSelection(true);
 		_placeable.Value.SetOccupyingNodes(new List<Node> { targetNode });
 		_placeable.Value.Place();
 	
-		Move(path, speed, () =>
+		Move(path, _unitDataSO.MoveSpeedOnPath, () =>
 		{
 			targetNode.SetPreventPlaceableSelection(false);
 		});
 	}
 
-	public void Move(Vector3 targetPosition, float duration, Action callback = null)
+	public void Move(Vector3 targetPosition, float speed, Action callback = null)
 	{
 		_moveTween?.Kill();
-		_moveTween = transform.DOMove(targetPosition, duration)
+		_moveTween = transform.DOMove(targetPosition, speed)
+			.SetSpeedBased()
 			.SetEase(Ease.Linear)
 			.OnComplete(() => callback?.Invoke());
 	}
 
-	public void Move(Vector3[] path, float duration, Action callback = null)
+	public void Move(Vector3[] path, float speed, Action callback = null)
 	{
 		_moveTween?.Kill();
-		_moveTween = transform.DOPath(path, duration, pathType: PathType.Linear, pathMode:PathMode.Sidescroller2D)
+		_moveTween = transform.DOPath(path, speed, pathType: PathType.Linear, pathMode:PathMode.Sidescroller2D)
 			.SetEase(Ease.Linear)
 			.SetSpeedBased()
 			.OnComplete(() => callback?.Invoke());

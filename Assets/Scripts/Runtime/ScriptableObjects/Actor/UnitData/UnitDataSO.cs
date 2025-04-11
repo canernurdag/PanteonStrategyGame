@@ -10,5 +10,7 @@ public class UnitDataSO : ScriptableObject
 	public string SpriteName;
 	public float InitHealth;
 	public float DamagePerAttack;
+	public float AttackSpeed;
+	public float MoveSpeedOnPath;
 }
 

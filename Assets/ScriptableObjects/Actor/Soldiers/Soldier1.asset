@@ -18,3 +18,5 @@ MonoBehaviour:
   SpriteName: Shot_Purple
   InitHealth: 10
   DamagePerAttack: 10
+  AttackSpeed: 10
+  MoveSpeedOnPath: 10

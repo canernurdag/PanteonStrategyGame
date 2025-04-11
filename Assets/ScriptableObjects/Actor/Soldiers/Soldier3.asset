@@ -18,3 +18,5 @@ MonoBehaviour:
   SpriteName: Shot_Red
   InitHealth: 10
   DamagePerAttack: 2
+  AttackSpeed: 10
+  MoveSpeedOnPath: 10
