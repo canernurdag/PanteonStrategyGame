@@ -9,7 +9,7 @@
 
 ## Dev Info
 - Unity 2021.3.13
-- Porgramming Pradigm: OOP
+- Programming Pradigm: OOP
 - Design Patterns: Observer, Factory, Strategy, Singleton, Object Pool
 - Architecture Pattern: MVP(Ui)
 - Design Principle: SOLID
