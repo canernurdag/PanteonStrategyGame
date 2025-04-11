@@ -69,6 +69,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damagableHealthView: {fileID: 7770817762954484994}
   _damagableHealthModel: {fileID: 3381110877676559609}
+  _placeable:
+    underlyingValue: {fileID: 1363703985374901053}
 --- !u!114 &7770817762954484994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +115,10 @@ MonoBehaviour:
   _building: {fileID: 0}
   <Selectable>k__BackingField:
     underlyingValue: {fileID: 4048461164490053203}
+  <Damagable>k__BackingField:
+    underlyingValue: {fileID: 8419529289103704110}
+  <Attacker>k__BackingField:
+    underlyingValue: {fileID: 0}
 --- !u!114 &4380894062086207918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2680803466964930627}
   - component: {fileID: 5439277463834980955}
+  - component: {fileID: 6500594400653623026}
   m_Layer: 0
   m_Name: SelectionIndicator
   m_TagString: Untagged
@@ -348,7 +355,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6c87bc56fe826dd459bac4f9367563cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -360,6 +367,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6500594400653623026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8241621707694712707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d797c3b773029e49bab28b5e957f840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoFillOn: 1
+  _spriteRenderer: {fileID: 5439277463834980955}
+  _atlas: {fileID: 100100200, guid: 3d9fb1a324f8c144babb044b837160c6, type: 3}
+  _spriteName: Circle
 --- !u!1001 &2762452453611734830
 PrefabInstance:
   m_ObjectHideFlags: 0

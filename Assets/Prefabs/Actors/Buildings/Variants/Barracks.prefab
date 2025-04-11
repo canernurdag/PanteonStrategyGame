@@ -348,6 +348,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6887554806884313970, guid: 8c51fa69821c879488917956784b5015, type: 3}
   m_PrefabInstance: {fileID: 6628586054191985137}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1189308662583346090 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5439277463834980955, guid: 8c51fa69821c879488917956784b5015, type: 3}
+  m_PrefabInstance: {fileID: 6628586054191985137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3397221146393752031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8419529289103704110, guid: 8c51fa69821c879488917956784b5015, type: 3}
+  m_PrefabInstance: {fileID: 6628586054191985137}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5665990846106332968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f456af844c30ce54b8ba43b584c25053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5265181206042280652 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1363703985374901053, guid: 8c51fa69821c879488917956784b5015, type: 3}
@@ -383,6 +399,8 @@ MonoBehaviour:
     underlyingValue: {fileID: 5265181206042280652}
   <BuildingAsUnitProducer>k__BackingField:
     underlyingValue: {fileID: 7435856494617987167}
+  <Damagable>k__BackingField:
+    underlyingValue: {fileID: 3397221146393752031}
 --- !u!114 &7192937033396676514 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4048461164490053203, guid: 8c51fa69821c879488917956784b5015, type: 3}
@@ -405,6 +423,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfffeb1725bd2164093f92188f5b88f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8072770948055748577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3167518737310711312, guid: 8c51fa69821c879488917956784b5015, type: 3}
+  m_PrefabInstance: {fileID: 6628586054191985137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3373146475053174086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8072770948055748577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d797c3b773029e49bab28b5e957f840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoFillOn: 1
+  _spriteRenderer: {fileID: 1189308662583346090}
+  _atlas: {fileID: 100100200, guid: 3d9fb1a324f8c144babb044b837160c6, type: 3}
+  _spriteName: BarrackUi
 --- !u!114 &8726664763298351430 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2514733417810737335, guid: 8c51fa69821c879488917956784b5015, type: 3}

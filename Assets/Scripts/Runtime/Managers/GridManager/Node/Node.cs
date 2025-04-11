@@ -48,16 +48,19 @@ public class Node : MonoBehaviour
 
 	public void ResetNodeVisual()
 	{
+
 		if(IsOccupied)
 		{
 			var isInsideTypeUnit = InsidePlaceable.GetType() == typeof(UnitAsPlaceable);
-			if (isInsideTypeUnit) return;
-		}
+			if (isInsideTypeUnit)
+			{
+				_nodeVisualController.SetNodeVisualAsNormal();
+			}
+			else
+			{
+				_nodeVisualController.SetNodeVisualAsPlaced();
+			}
 
-
-		if(IsOccupied)
-		{
-			_nodeVisualController.SetNodeVisualAsPlaced();
 		}
 		else if(!IsOccupied)
 		{

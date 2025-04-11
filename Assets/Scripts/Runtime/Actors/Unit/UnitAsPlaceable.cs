@@ -6,6 +6,8 @@ public class UnitAsPlaceable : MonoBehaviour, IPlaceable
 {
 	#region DIRECT REF
 	[field: SerializeField] public InterfaceReference<ISelectable> Selectable { get; private set; }
+	[field: SerializeField] public InterfaceReference<IDamagable> Damagable { get; private set; }
+	[field: SerializeField] public InterfaceReference<IAttacker> Attacker { get; private set; }
 	#endregion
 
 	#region INTERNAL VAR

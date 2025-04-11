@@ -8,12 +8,10 @@ public class DamagableHealthModel : MonoBehaviour
 	private OnDamagableHealthChanged _onDamagableHealthChanged;
 	#endregion
 
-
 	#region INTERNAL VAR
 	public float InitHealth { get; private set; }
     public float CurrentHealth { get; private set; }
 	#endregion
-
 
 	private void Start()
 	{
@@ -28,6 +26,6 @@ public class DamagableHealthModel : MonoBehaviour
     public void SetCurrentHealth(float currentHealth)
     {
 		CurrentHealth = currentHealth;
-		_onDamagableHealthChanged.Execute(this);
+		_onDamagableHealthChanged?.Execute(this);
     }
 }

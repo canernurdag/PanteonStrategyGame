@@ -2,6 +2,8 @@ using System.Collections.Generic;
 public interface IPlaceable : IMonobehaviour
 {
 	InterfaceReference<ISelectable> Selectable { get; }
+	InterfaceReference<IDamagable> Damagable { get; }
+	InterfaceReference<IAttacker> Attacker { get; }
     bool IsPlaced { get;}
 	void Place();
 	void Deplace();

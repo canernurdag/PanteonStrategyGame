@@ -120,13 +120,6 @@ public class SelectionManager : Singleton<SelectionManager>
 			if (_selectedFlagSpawnPoint != null) return;
 
 			var insideSelectable = nodeInsidePlaceable.Selectable.Value;
-			//if (insideSelectable == null)
-			//{
-			//	ResetSelectedBuildingAndUnit();
-
-			//	return;
-			//}
-
 			ResetSelectedBuildingAndUnit();
 
 			insideSelectable.Select();
@@ -146,8 +139,30 @@ public class SelectionManager : Singleton<SelectionManager>
 			var unit = unitAsSelectable.Unit;
 
 			Node clickNode = GridManager.Instance.GetNodeFromWorldPosition(inputPosition);
+			bool isClickNodeOccupied = clickNode.IsOccupied;
 
-			_onUnitMoveCommand.Execute(unit, clickNode);
+			if(isClickNodeOccupied)
+			{
+				var damagableInterface = clickNode.InsidePlaceable.Damagable;
+				if (damagableInterface == null) return;
+
+				var damagable = damagableInterface.Value;
+
+				var attackerInterface = _selectedUnit.Placeable.Value.Attacker;
+				if(attackerInterface == null) return;
+
+				var attacker = attackerInterface.Value;
+
+				if (attacker.Transform == damagable.Transform) return;
+
+				attacker.Attack(damagable);
+			}
+			else if(!isClickNodeOccupied)
+			{
+				_onUnitMoveCommand.Execute(unit, clickNode);
+			}
+
+			
 		}
 	}
 

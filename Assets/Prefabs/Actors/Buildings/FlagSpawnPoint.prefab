@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5479807528742853922}
   - component: {fileID: 3979561837398258462}
+  - component: {fileID: 7092432129905715808}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -84,6 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7092432129905715808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050818837611830042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d797c3b773029e49bab28b5e957f840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoFillOn: 1
+  _spriteRenderer: {fileID: 3979561837398258462}
+  _atlas: {fileID: 100100200, guid: 3d9fb1a324f8c144babb044b837160c6, type: 3}
+  _spriteName: RedFlag
 --- !u!1 &2474708668068773684
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,3 +151,7 @@ MonoBehaviour:
     underlyingValue: {fileID: 6556565926665430412}
   <Placeable>k__BackingField:
     underlyingValue: {fileID: 6556565926665430412}
+  <Damagable>k__BackingField:
+    underlyingValue: {fileID: 0}
+  <Attacker>k__BackingField:
+    underlyingValue: {fileID: 0}

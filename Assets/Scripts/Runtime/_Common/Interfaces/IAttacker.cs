@@ -1,4 +1,5 @@
 public interface IAttacker : IMonobehaviour
 {
-	void Attack(float damageAmount);
+	void Attack(IDamagable damageable);
+	void SetDamageAmount(float damageAmount);
 }

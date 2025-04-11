@@ -10,7 +10,7 @@ public class SpriteAtlasForSpriteRenderer : MonoBehaviour
 	[SerializeField] private SpriteAtlas _atlas;
 	[SerializeField] private string _spriteName;
 
-	private void Start()
+	private void Awake()
 	{
 		if (_isAutoFillOn)
 		{

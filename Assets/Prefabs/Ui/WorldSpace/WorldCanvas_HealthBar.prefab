@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 4260091900853957784}
   - component: {fileID: 4260091900853957786}
   - component: {fileID: 4260091900853957785}
+  - component: {fileID: 3911166312259225525}
   m_Layer: 5
   m_Name: Image_Outside
   m_TagString: Untagged
@@ -243,6 +244,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3911166312259225525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4260091900853957791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e4d3efc7648d34bb0900426d9db3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoFillOn: 1
+  _image: {fileID: 4260091900853957785}
+  _atlas: {fileID: 100100200, guid: 3d9fb1a324f8c144babb044b837160c6, type: 3}
+  _spriteName: Bar
 --- !u!1 &4260091901552724134
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +271,7 @@ GameObject:
   - component: {fileID: 4260091901552724135}
   - component: {fileID: 4260091901552724129}
   - component: {fileID: 4260091901552724128}
+  - component: {fileID: 767982924082609993}
   m_Layer: 5
   m_Name: Image_Inside
   m_TagString: Untagged
@@ -319,3 +337,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &767982924082609993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4260091901552724134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e4d3efc7648d34bb0900426d9db3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoFillOn: 1
+  _image: {fileID: 4260091901552724128}
+  _atlas: {fileID: 100100200, guid: 3d9fb1a324f8c144babb044b837160c6, type: 3}
+  _spriteName: Bar

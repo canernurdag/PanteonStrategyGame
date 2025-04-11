@@ -22,5 +22,6 @@ public class OnFlagDeselected :CanerEvent<FlagSpawnPoint> { }
 public class OnDamagableHealthChanged : CanerEvent<DamagableHealthModel> { }
 public class OnPreventSelectionChanged : CanerEvent<bool> { }
 public class OnUnitMoveCommand : CanerEvent<Unit, Node> { }
+public class OnUnitAttackCommand : CanerEvent<Unit, DamagableHealthPresenter> { }
 
 

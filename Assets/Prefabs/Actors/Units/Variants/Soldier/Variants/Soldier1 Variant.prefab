@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: _placeable.underlyingValue
       value: 
       objectReference: {fileID: 383187022208541216}
+    - target: {fileID: 899299606085427348, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
+      propertyPath: _isAutoFillOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1055335122718076434, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -87,6 +91,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.017
       objectReference: {fileID: 0}
+    - target: {fileID: 8594021646233824843, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
+      propertyPath: _unitDataSO
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ce1a6791a26114ba06242d3e975b4f, type: 2}
     - target: {fileID: 8713388970000812909, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
       propertyPath: <UnitDataSO>k__BackingField
       value: 
@@ -123,24 +131,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <UnitDataSO>k__BackingField: {fileID: 11400000, guid: b3ce1a6791a26114ba06242d3e975b4f, type: 2}
   <UnitAsAttacker>k__BackingField:
-    underlyingValue: {fileID: 1903900890525833642}
+    underlyingValue: {fileID: 6313906812318415416}
   <UnitAsSelectable>k__BackingField:
     underlyingValue: {fileID: 2130590605191518905}
   <UnitAsMovable>k__BackingField:
     underlyingValue: {fileID: 2766399999445379268}
   <UnitAsPlaceable>k__BackingField:
     underlyingValue: {fileID: 383187022208541216}
---- !u!114 &1903900890525833642 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4231019878669553113, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
-  m_PrefabInstance: {fileID: 2367655269663544435}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279078919848255611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9a5ef77b1e47d1459a90476a54ebdc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  <Damagable>k__BackingField:
+    underlyingValue: {fileID: 6086266017486189415}
 --- !u!114 &2130590605191518905 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4416616376036822730, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
@@ -161,5 +160,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 082715c40c61ee84b8136ad579bb789c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6086266017486189415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8407476539430217492, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
+  m_PrefabInstance: {fileID: 2367655269663544435}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279078919848255611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f456af844c30ce54b8ba43b584c25053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6313906812318415416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8594021646233824843, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
+  m_PrefabInstance: {fileID: 2367655269663544435}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279078919848255611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a5ef77b1e47d1459a90476a54ebdc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

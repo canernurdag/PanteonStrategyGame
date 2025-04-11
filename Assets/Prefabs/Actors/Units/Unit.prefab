@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1159761722757167286}
   - component: {fileID: 8083920081978979814}
+  - component: {fileID: 6346286423019169586}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -84,6 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6346286423019169586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4404256034156781989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d797c3b773029e49bab28b5e957f840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoFillOn: 0
+  _spriteRenderer: {fileID: 8083920081978979814}
+  _atlas: {fileID: 100100200, guid: 3d9fb1a324f8c144babb044b837160c6, type: 3}
+  _spriteName: Shot_Purple
 --- !u!1 &6542939062598461876
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 250589677438500038}
   - component: {fileID: 6333422635097157077}
+  - component: {fileID: 7394119027659471936}
   m_Layer: 0
   m_Name: SelectionIndicator
   m_TagString: Untagged
@@ -156,7 +174,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6c87bc56fe826dd459bac4f9367563cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,6 +186,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7394119027659471936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6542939062598461876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d797c3b773029e49bab28b5e957f840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoFillOn: 1
+  _spriteRenderer: {fileID: 6333422635097157077}
+  _atlas: {fileID: 100100200, guid: 3d9fb1a324f8c144babb044b837160c6, type: 3}
+  _spriteName: Circle
 --- !u!1 &7310423800635569070
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +217,7 @@ GameObject:
   - component: {fileID: 7575763668771981676}
   - component: {fileID: 5969484002860104465}
   - component: {fileID: 8206331099082191349}
+  - component: {fileID: 2534511731420899821}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -205,6 +240,7 @@ Transform:
   - {fileID: 1159761722757167286}
   - {fileID: 8625776614211492067}
   - {fileID: 250589677438500038}
+  - {fileID: 681416410841246903}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -234,6 +270,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damagableHealthView: {fileID: 4714344244955714598}
   _damagableHealthModel: {fileID: 4765814099769216394}
+  _placeable:
+    underlyingValue: {fileID: 8206331099082191349}
 --- !u!114 &4714344244955714598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unit: {fileID: 0}
   _placeable:
-    underlyingValue: {fileID: 0}
+    underlyingValue: {fileID: 8206331099082191349}
 --- !u!114 &8206331099082191349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +330,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Selectable>k__BackingField:
     underlyingValue: {fileID: 7575763668771981676}
+  <Damagable>k__BackingField:
+    underlyingValue: {fileID: 2361335930679517362}
+  <Attacker>k__BackingField:
+    underlyingValue: {fileID: 2534511731420899821}
+--- !u!114 &2534511731420899821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7310423800635569070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a5ef77b1e47d1459a90476a54ebdc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _muzzlePos: {fileID: 681416410841246903}
+  bulletFactory: {fileID: 0}
+--- !u!1 &9000695549478087551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 681416410841246903}
+  m_Layer: 0
+  m_Name: MuzzlePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &681416410841246903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000695549478087551}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7805670216935024786}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5524237935258332330
 PrefabInstance:
   m_ObjectHideFlags: 0

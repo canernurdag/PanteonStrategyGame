@@ -7,6 +7,8 @@ public class FlagSpawnPoint : MonoBehaviour, ISelectable, IPlaceable
 	[field: SerializeField] public Building Building { get; private set; }
 	[field: SerializeField] public InterfaceReference<ISelectable> Selectable { get; private set; }
 	[field: SerializeField] public InterfaceReference<IPlaceable> Placeable { get; private set; }
+	[field: SerializeField] public InterfaceReference<IDamagable> Damagable { get; private set; }
+	[field: SerializeField] public InterfaceReference<IAttacker> Attacker { get; private set; }
 	#endregion
 
 	#region REF
@@ -19,6 +21,8 @@ public class FlagSpawnPoint : MonoBehaviour, ISelectable, IPlaceable
 	public bool IsSelected { get; protected set; }
 	public List<Node> OccupyingNodes { get; private set; } = new();
 	public bool IsPlaced { get; protected set; }
+
+
 	#endregion
 
 	private void Start()
