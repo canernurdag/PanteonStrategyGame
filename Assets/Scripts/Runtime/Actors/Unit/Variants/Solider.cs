@@ -1,4 +1,4 @@
-public class Solider : Unit
+public abstract class Solider : Unit
 {
   
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoliderAttacking : MonoBehaviour, IAttacking
+public class SoliderAttackController : MonoBehaviour, IAttacker
 {
 	public Transform Transform => transform;
 

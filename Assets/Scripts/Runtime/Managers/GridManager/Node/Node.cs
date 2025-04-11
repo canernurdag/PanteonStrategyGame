@@ -11,7 +11,7 @@ public class Node : MonoBehaviour
 	public int Y { get; private set; } = 0;
 	public Vector3 WorldPosition { get; private set; } = Vector3.zero;
 	public bool IsOccupied { get; private set; } = false;
-	public ISelectable InsideSelectable { get; private set; } = null;
+	public IPlaceable InsidePlaceable { get; private set; } = null;
 	#endregion
 
 	#region A*PATHFINDING
@@ -34,9 +34,9 @@ public class Node : MonoBehaviour
 		IsOccupied = isOccupied;
 	}
 
-	public void SetInsideSelectable(ISelectable seletable)
+	public void SetInsidePlaceable(IPlaceable placeable)
 	{
-		InsideSelectable = seletable;
+		InsidePlaceable = placeable;
 	}
 
 	public void ResetNodeVisual()

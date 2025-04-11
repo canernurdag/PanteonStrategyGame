@@ -22,3 +22,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b3ce1a6791a26114ba06242d3e975b4f, type: 2}
   - {fileID: 11400000, guid: 3f9d442e0561d374997fb6f7a31c0330, type: 2}
   - {fileID: 11400000, guid: 9d3a7cdab82ed814b93a34f987e0ee62, type: 2}
+  PreferedSpawnNodeHorizontal: 2
+  PreferedSpawnNodeVertical: -4

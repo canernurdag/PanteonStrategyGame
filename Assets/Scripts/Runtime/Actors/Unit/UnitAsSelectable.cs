@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitSelectable : MonoBehaviour, ISelectable
+public class UnitAsSelectable : MonoBehaviour, ISelectable
 {
 	#region DIRECT REF
 	[SerializeField] private Unit _unit;

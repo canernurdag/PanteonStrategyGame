@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingSelectable : MonoBehaviour, ISelectable
+public class BuildingAsSelectable : MonoBehaviour, ISelectable
 {
 	#region DIRECT REF
 	[SerializeField] private Building _building;

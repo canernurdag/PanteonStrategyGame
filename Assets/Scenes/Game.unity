@@ -1752,7 +1752,7 @@ GameObject:
   - component: {fileID: 662378918}
   - component: {fileID: 662378917}
   m_Layer: 0
-  m_Name: PlacementManager
+  m_Name: BuildingPlacementManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

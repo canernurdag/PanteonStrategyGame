@@ -14,10 +14,11 @@ public class OnBuildingUiSelected : CanerEvent<BuildingDataSO> { }
 public class OnProductCreateRequest : CanerEvent<Building,UnitDataSO> { }
 public class OnBuildingSelected : CanerEvent<Building> { }
 public class OnBuildingDeselected : CanerEvent { }
+public class OnBuildingPlaced : CanerEvent<Building, Node> { }
 public class OnUnitSelected : CanerEvent<Unit> { }
 public class OnUnitDeselected : CanerEvent { }
 public class OnDamagableHealthChanged : CanerEvent<DamagableHealthModel> { }
 public class OnPreventSelectionChanged : CanerEvent<bool> { }
-//public class OnPreventPlacementChanged : CanerEvent<bool> { }
+
 
 

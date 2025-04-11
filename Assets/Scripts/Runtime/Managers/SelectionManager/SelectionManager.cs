@@ -49,7 +49,15 @@ public class SelectionManager : Singleton<SelectionManager>
 			return;
 		}
 
-		var insideSelectable = clickNode.InsideSelectable;
+
+		var insidePlaceable = clickNode.InsidePlaceable;
+		if (insidePlaceable == null) 
+		{
+			_onBuildingDeselected.Execute();
+			return;
+		}
+
+		var insideSelectable = insidePlaceable.Selectable.Value;
 		if (insideSelectable == null)
 		{
 			_onBuildingDeselected.Execute();
@@ -61,7 +69,7 @@ public class SelectionManager : Singleton<SelectionManager>
 
 	private void HandleRightClick(Vector3 inputPosition)
 	{
-
+		//FOR POTENTIAL FUTURE REQUESTS
 	}
 
 	public void SetPreventSelection(bool isPrevent)

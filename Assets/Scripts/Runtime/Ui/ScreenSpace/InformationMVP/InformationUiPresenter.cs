@@ -30,10 +30,12 @@ public class InformationUiPresenter : MonoBehaviour
 	{
 		_onBuildingSelected = EventManager.Instance.GetEvent<OnBuildingSelected>();
 		_onBuildingDeselected = EventManager.Instance.GetEvent<OnBuildingDeselected>();
+	
 		_onProductCreateRequest = EventManager.Instance.GetEvent<OnProductCreateRequest>();
 	
 		_onBuildingSelected.AddListener(Setup);
 		_onBuildingDeselected.AddListener(InactivateInformationPanel);
+
 	}
 
 	private void OnDestroy()
@@ -106,4 +108,5 @@ public class InformationUiPresenter : MonoBehaviour
 	{
 		_parentTransform.gameObject.SetActive(false);
 	}
+
 }

@@ -136,4 +136,19 @@ public sealed class GridManager : Singleton<GridManager>
 
 		return buildingNodes;
 	}
+
+	public Node GetNodeByOffset(Node node, int offsetX, int offsetY)
+	{
+		if (node == null) return null;
+
+		int targetX = node.X + offsetX;
+		int targetY = node.Y + offsetY;
+
+		bool isTargetInBounds = IsInBounds(targetX, targetY);
+		if (!isTargetInBounds) return null;
+
+		var targetNode = _grid[targetX, targetY];
+
+		return targetNode;
+	}
 }

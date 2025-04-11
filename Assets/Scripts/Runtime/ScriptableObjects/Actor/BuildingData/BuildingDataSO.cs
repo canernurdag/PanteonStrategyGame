@@ -11,5 +11,6 @@ public class BuildingDataSO : ScriptableObject
 	public int DimensionVertical;
 	public float InitHealth;
 	public List<UnitDataSO> ProductDatas = new();
+	public int PreferedSpawnNodeHorizontal, PreferedSpawnNodeVertical;
 }
 
