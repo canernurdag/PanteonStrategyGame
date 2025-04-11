@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,7 +53,12 @@ public class BuildingAsUnitProducer : MonoBehaviour,IUnitProducer
 		var firstSpawnNode = spawnNode;
 		List<Node> occupyingNodes = new(){firstSpawnNode};
 
-		MoveProducedUnitToFirstNode(unit, firstSpawnNode);
+		MoveProducedUnitToFirstNode(unit, firstSpawnNode, () => 
+		{
+			var nearestNode = PathfindingManager.Instance.FindNearestUnoccupiedAndNoPreventNode(_flagSpawnPoint.OccupyingNodes[0]);
+			var unitAsMovable = unit.UnitAsMovable.Value as UnitAsMovable;
+			unitAsMovable.MoveWithNodeLock(unit, nearestNode);
+		});
 
 		var placeable = unit.UnitAsPlaceable.Value;
 		placeable.SetOccupyingNodes(occupyingNodes);
@@ -74,9 +80,9 @@ public class BuildingAsUnitProducer : MonoBehaviour,IUnitProducer
 
 	}
 
-	public void MoveProducedUnitToFirstNode(Unit unit, Node firstNode)
+	public void MoveProducedUnitToFirstNode(Unit unit, Node firstNode, Action callback)
 	{
-		unit.UnitAsMovable.Value.Move(firstNode.transform.position, 0.5f); 
+		unit.UnitAsMovable.Value.Move(firstNode.transform.position, 0.5f, callback); 
 	}
 
 	private void PlaceUnitToInitPosition(Unit unit)

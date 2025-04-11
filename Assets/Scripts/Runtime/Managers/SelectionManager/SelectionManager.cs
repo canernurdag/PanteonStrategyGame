@@ -76,16 +76,14 @@ public class SelectionManager : Singleton<SelectionManager>
 		Node clickNode = GridManager.Instance.GetNodeFromWorldPosition(inputPosition);
 		if (clickNode == null)
 		{
-			_onBuildingDeselected.Execute();
-			_onUnitDeselected.Execute();
+			ResetSelectedBuildingAndUnit();
 			return;
 		}
 
 		var nodeInsidePlaceable = clickNode.InsidePlaceable;
 		if (nodeInsidePlaceable == null) 
 		{
-			_onBuildingDeselected.Execute();
-			_onUnitDeselected.Execute();
+			ResetSelectedBuildingAndUnit();
 
 			var nodeInsideFlag = clickNode.InsideFlagSpawnPoint;
 
@@ -124,8 +122,8 @@ public class SelectionManager : Singleton<SelectionManager>
 			var insideSelectable = nodeInsidePlaceable.Selectable.Value;
 			if (insideSelectable == null)
 			{
-				_onBuildingDeselected.Execute();
-				_onUnitDeselected.Execute();
+				ResetSelectedBuildingAndUnit();
+
 				return;
 			}
 
@@ -134,6 +132,8 @@ public class SelectionManager : Singleton<SelectionManager>
 
 		
 	}
+
+
 
 	private void HandleRightClick(Vector3 inputPosition)
 	{
@@ -167,5 +167,13 @@ public class SelectionManager : Singleton<SelectionManager>
 	public void SetSelectedFlag(FlagSpawnPoint flagSpawnPoint)
 	{
 		_selectedFlagSpawnPoint = flagSpawnPoint;
+	}
+
+	private void ResetSelectedBuildingAndUnit()
+	{
+		_onBuildingDeselected.Execute();
+		_onUnitDeselected.Execute();
+		_selectedBuilding = null;
+		_selectedUnit = null;
 	}
 }

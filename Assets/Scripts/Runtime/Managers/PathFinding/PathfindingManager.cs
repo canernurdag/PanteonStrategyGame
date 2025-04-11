@@ -95,4 +95,49 @@ public class PathfindingManager : Singleton<PathfindingManager>
 		path.Reverse();
 		return path;
 	}
+
+	public Node FindNearestUnoccupiedAndNoPreventNode(Node targetNode)
+	{
+		if (targetNode == null || _gridManager.Grid == null)
+		{
+			return null;
+		}
+
+		if (!targetNode.IsOccupied && !targetNode.PreventPlaceableSelection)
+		{
+			return targetNode;
+		}
+
+		Queue<Node> queue = new Queue<Node>();
+		HashSet<Node> visited = new HashSet<Node>();
+
+		queue.Enqueue(targetNode);
+		visited.Add(targetNode);
+
+		while (queue.Count > 0)
+		{
+			Node currentNode = queue.Dequeue();
+
+	
+			foreach (Node neighbor in _gridManager.GetNeighbours(currentNode))
+			{
+				if (visited.Contains(neighbor))
+				{
+					continue; 
+				}
+
+			
+				visited.Add(neighbor);
+				queue.Enqueue(neighbor);
+
+				
+				if (!neighbor.IsOccupied && !neighbor.PreventPlaceableSelection)
+				{
+					return neighbor;
+				}
+			}
+		}
+
+		return null;
+	}
 }

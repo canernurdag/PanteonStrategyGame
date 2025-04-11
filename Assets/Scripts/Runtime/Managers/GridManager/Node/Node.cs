@@ -14,6 +14,7 @@ public class Node : MonoBehaviour
 	public bool IsOccupied { get; private set; } = false;
 	public IPlaceable InsidePlaceable { get; private set; } = null;
 	public IPlaceable InsideFlagSpawnPoint { get; private set; } = null;
+	public bool PreventPlaceableSelection { get; private set; } = false;
 	#endregion
 
 	#region A*PATHFINDING
@@ -49,6 +50,13 @@ public class Node : MonoBehaviour
 	{
 		if(IsOccupied)
 		{
+			var isInsideTypeUnit = InsidePlaceable.GetType() == typeof(UnitAsPlaceable);
+			if (isInsideTypeUnit) return;
+		}
+
+
+		if(IsOccupied)
+		{
 			_nodeVisualController.SetNodeVisualAsPlaced();
 		}
 		else if(!IsOccupied)
@@ -67,5 +75,9 @@ public class Node : MonoBehaviour
 		_nodeVisualController.SetNodeVisualAsOccupied();
 	}
 
+	public void SetPreventPlaceableSelection(bool isPrevent)
+	{
+		PreventPlaceableSelection = isPrevent;
+	}
 
 }

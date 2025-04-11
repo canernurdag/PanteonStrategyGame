@@ -34,12 +34,17 @@ public class UnitAsMovable : MonoBehaviour, IUnitMovable
 
 	public void Move(Unit unit, Node targetNode)
 	{
-		Node startNode = _placeable.Value.OccupyingNodes[0];
-		_placeable.Value.Deplace();
+		if (unit != _unit) return;
 
 		Node currentNode = GridManager.Instance.GetNodeFromWorldPosition(transform.position);
 
-		var path = PathfindingManager.Instance.GetPath(currentNode, targetNode)
+		var nodePath = PathfindingManager.Instance.GetPath(currentNode, targetNode);
+		if (nodePath == null) return;
+
+		Node startNode = _placeable.Value.OccupyingNodes[0];
+		_placeable.Value.Deplace();
+
+		var path = nodePath
 			.Select(x=>x.transform.position)
 			.ToArray();
 		float speed = 10;
@@ -49,8 +54,31 @@ public class UnitAsMovable : MonoBehaviour, IUnitMovable
 			_placeable.Value.SetOccupyingNodes(new List<Node> { targetNode });
 			_placeable.Value.Place(); 
 		});
+	}
 
-		//Move();
+	public void MoveWithNodeLock(Unit unit, Node targetNode)
+	{
+		Node currentNode = GridManager.Instance.GetNodeFromWorldPosition(transform.position);
+
+		var nodePath = PathfindingManager.Instance.GetPath(currentNode, targetNode);
+		if (nodePath == null) return;
+
+		Node startNode = _placeable.Value.OccupyingNodes[0];
+		_placeable.Value.Deplace();
+
+		var path = nodePath
+			.Select(x => x.transform.position)
+			.ToArray();
+		float speed = 10;
+
+		targetNode.SetPreventPlaceableSelection(true);
+		_placeable.Value.SetOccupyingNodes(new List<Node> { targetNode });
+		_placeable.Value.Place();
+	
+		Move(path, speed, () =>
+		{
+			targetNode.SetPreventPlaceableSelection(false);
+		});
 	}
 
 	public void Move(Vector3 targetPosition, float duration, Action callback = null)
