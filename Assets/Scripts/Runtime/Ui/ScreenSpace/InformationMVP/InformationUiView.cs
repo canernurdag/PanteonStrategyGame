@@ -12,6 +12,7 @@ public class InformationUiView : MonoBehaviour
 	[SerializeField] private Image _buildingImage;
 	[SerializeField] private Image _productImage;
 	[SerializeField] private TMP_Text _buildingNameTMPText;
+	[SerializeField] private TMP_Text _buildingDimensionText;
 	[SerializeField] private GameObject _parentProductDivision;
 	#endregion
 
@@ -48,6 +49,11 @@ public class InformationUiView : MonoBehaviour
 	public void SetBuildingName(string name)
 	{
 		_buildingNameTMPText.text = name;
+	}
+
+	public void SetBuildingDimensionText(string dimension)
+	{
+		_buildingDimensionText.text = dimension;
 	}
 
 	public void ActivateProductDivision()

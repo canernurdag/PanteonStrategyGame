@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitType: 2
   Name: Solider2
-  Sprite: {fileID: 21300000, guid: e45405c31ec7aff42be4e88aabafe115, type: 3}
+  SpriteAtlas: {fileID: 100100200, guid: 3d9fb1a324f8c144babb044b837160c6, type: 3}
+  SpriteName: Shot_Blue
   InitHealth: 10
   DamagePerAttack: 5

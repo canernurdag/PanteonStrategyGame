@@ -60,10 +60,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 7120773766650434538}
-  _occupiedSprite: {fileID: 21300000, guid: a960caf041af2634cbd0330d583b7ed1, type: 3}
-  _unOccupiedSprite: {fileID: 21300000, guid: c4196be7022d71446b3e56e65563f9a3, type: 3}
-  _placedSprite: {fileID: 21300000, guid: 508c330c48d0666489de991d06583489, type: 3}
-  _normalSprite: {fileID: 21300000, guid: fad01a474acbd02498318a3c5e11cce1, type: 3}
+  _atlas: {fileID: 100100200, guid: 3d9fb1a324f8c144babb044b837160c6, type: 3}
+  _occupiedSprite: Grass32_Occupied
+  _unOccupiedSprite: Grass32_Unoccupied
+  _placedSprite: Grass32_Placed
+  _normalSprite: Grass32_Normal
 --- !u!1 &7158801288626105447
 GameObject:
   m_ObjectHideFlags: 0

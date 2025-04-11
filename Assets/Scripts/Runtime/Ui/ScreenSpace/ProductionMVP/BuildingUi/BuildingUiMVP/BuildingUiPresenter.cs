@@ -25,7 +25,9 @@ public class BuildingUiPresenter : MonoBehaviour
 	public void Setup(BuildingDataSO buildingDataSO)
 	{
 		_buildingUiModel.SetBuildingDataSO(buildingDataSO);
-		_buildingUiView.SetInsideImage(buildingDataSO.Sprite);
+		var spriteAtlas = buildingDataSO.SpriteAtlas;
+		var sprite = spriteAtlas.GetSprite(buildingDataSO.SpriteName);
+		_buildingUiView.SetInsideImage(sprite);
 		_buildingUiView.SetButtonFunction(() => 
 		{
 			_onBuildingUiSelected.Execute(buildingDataSO);

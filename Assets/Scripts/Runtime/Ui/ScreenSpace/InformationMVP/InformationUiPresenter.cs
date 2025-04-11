@@ -52,8 +52,11 @@ public class InformationUiPresenter : MonoBehaviour
 		_productIndex = 0;
 
 		_informationUiModel.SetSelectedBuilding(building);
-		_informationUiView.SetBuildingImage(buildingDataSO.Sprite);
+		var spriteAtlas = buildingDataSO.SpriteAtlas;
+		var sprite = spriteAtlas.GetSprite(buildingDataSO.SpriteName);
+		_informationUiView.SetBuildingImage(sprite);
 		_informationUiView.SetBuildingName(buildingDataSO.Name);
+		_informationUiView.SetBuildingDimensionText($"{buildingDataSO.DimensionHorizontal}x{buildingDataSO.DimensionVertical}");
 
 		if (buildingDataSO.ProductDatas.Count == 0)
 		{
@@ -95,7 +98,9 @@ public class InformationUiPresenter : MonoBehaviour
 	private void UpdateViewSelectedProduct()
 	{
 		var selectedProductData = _informationUiModel.SelectedBuilding.BuildingDataSO.ProductDatas[_productIndex];
-		_informationUiView.SetProductImage(selectedProductData.Sprite);
+		var spriteAtlas = selectedProductData.SpriteAtlas;
+		var sprite = spriteAtlas.GetSprite(selectedProductData.SpriteName);
+		_informationUiView.SetProductImage(sprite);
 		_informationUiView.SetProductButtonFunction(() => _onProductCreateRequest.Execute(_informationUiModel.SelectedBuilding, selectedProductData));
 	}
 
