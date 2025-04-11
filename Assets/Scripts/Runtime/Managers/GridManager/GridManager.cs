@@ -16,7 +16,7 @@ public sealed class GridManager : Singleton<GridManager>
 	public float cellSize = 1f;
 
 	private Node[,] _grid;
-
+	public Node[,] Grid => _grid;
 	#endregion
 
 	protected override void Awake()
@@ -81,8 +81,8 @@ public sealed class GridManager : Singleton<GridManager>
 
 	public Node GetNodeFromWorldPosition(Vector3 worldPosition)
 	{
-		int x = Mathf.RoundToInt(worldPosition.x / cellSize);
-		int y = Mathf.RoundToInt(worldPosition.y / cellSize);
+		int x = Mathf.FloorToInt(worldPosition.x / cellSize);
+		int y = Mathf.FloorToInt(worldPosition.y / cellSize);
 		if (IsInBounds(x, y)) return _grid[x, y];
 		return null;
 	}
@@ -109,4 +109,31 @@ public sealed class GridManager : Singleton<GridManager>
 		return x >= 0 && y >= 0 && x < width && y < height;
 	}
 
+
+	public List<Node> GetNodesByBuilding(Node followNode, Building building)
+	{
+		if(followNode == null) return null;
+
+		List<Node> buildingNodes = new();
+
+		int dimensionHorizontal = building.BuildingDataSO.DimensionHorizontal;
+		int dimensionVertical = building.BuildingDataSO.DimensionVertical;
+
+		for (int i = 0; i < dimensionHorizontal; i++)
+		{
+			for (int j = 0; j < dimensionVertical; j++)
+			{
+				int targetX = followNode.X + i;
+				int targetY = followNode.Y - j;
+
+				bool isTargetInBounds = IsInBounds(targetX, targetY);
+				if (!isTargetInBounds) return null;
+
+				var targetNode = _grid[targetX, targetY];
+				buildingNodes.Add(targetNode);
+			}
+		}
+
+		return buildingNodes;
+	}
 }

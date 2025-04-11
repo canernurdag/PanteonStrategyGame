@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76238ca4f852af74f8e680292e8d148e, type: 3}
   m_Name: Soldier2
   m_EditorClassIdentifier: 
+  UnitType: 2
+  Name: Solider2
+  Sprite: {fileID: 21300000, guid: e45405c31ec7aff42be4e88aabafe115, type: 3}
   InitHealth: 10
   DamagePerAttack: 5

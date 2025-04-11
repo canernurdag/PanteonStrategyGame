@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed3dc01313fbe64490d44218a47d0fa, type: 3}
   m_Name: PowerPlant
   m_EditorClassIdentifier: 
+  BuildingType: 2
   Name: PowerPlant
   Sprite: {fileID: 21300000, guid: 9f45e755adbfb7b4b88c6bcf9c708bcb, type: 3}
   DimensionHorizontal: 2
   DimensionVertical: 3
   InitHealth: 50
-  Products: []
+  ProductDatas: []

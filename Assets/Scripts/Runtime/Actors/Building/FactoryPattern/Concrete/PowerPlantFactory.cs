@@ -1,4 +1,5 @@
 
+using Lean.Pool;
 using UnityEngine;
 
 public class PowerPlantFactory : BuildingFactory
@@ -8,6 +9,7 @@ public class PowerPlantFactory : BuildingFactory
 	#endregion
 	public override Building CreateBuilding()
 	{
-		return Instantiate(_powerPlantPrefab);
+		return LeanPool.Spawn(_powerPlantPrefab, transform);
 	}
+
 }

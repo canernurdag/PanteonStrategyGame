@@ -12,7 +12,7 @@ public sealed class InputManager : Singleton<InputManager>
 	private OnLeftClickInputGiven _onLeftClickInputGiven;
 	private OnRightClickInputGiven _onRightClickInputGiven;
 	private OnMouseWorldPositionGiven _onMouseWorldPositionGiven;
-	private OnMouseScreenPositionGive _onMouseScreenPositionGive;
+	private OnMouseScreenPositionGiven _onMouseScreenPositionGiven;
 	#endregion
 
 	protected override void Awake()
@@ -26,13 +26,13 @@ public sealed class InputManager : Singleton<InputManager>
 		_onLeftClickInputGiven = EventManager.Instance.GetEvent<OnLeftClickInputGiven>();
 		_onRightClickInputGiven = EventManager.Instance.GetEvent<OnRightClickInputGiven>();
 		_onMouseWorldPositionGiven = EventManager.Instance.GetEvent<OnMouseWorldPositionGiven>();
-		_onMouseScreenPositionGive = EventManager.Instance.GetEvent<OnMouseScreenPositionGive>();
+		_onMouseScreenPositionGiven = EventManager.Instance.GetEvent<OnMouseScreenPositionGiven>();
 	}
 	private void Update()
 	{
 		if (_preventInput) return;
 
-		_onMouseScreenPositionGive.Execute(Input.mousePosition);
+		_onMouseScreenPositionGiven.Execute(Input.mousePosition);
 
 		var inputPos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
 		inputPos.z = 0;

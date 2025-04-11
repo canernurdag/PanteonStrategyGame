@@ -11,6 +11,7 @@ public class Node : MonoBehaviour
 	public int Y { get; private set; } = 0;
 	public Vector3 WorldPosition { get; private set; } = Vector3.zero;
 	public bool IsOccupied { get; private set; } = false;
+	public ISelectable InsideSelectable { get; private set; } = null;
 	#endregion
 
 	#region A*PATHFINDING
@@ -27,4 +28,38 @@ public class Node : MonoBehaviour
 		transform.position = WorldPosition;
 		transform.SetParent(parent);
 	}
+	
+	public void SetIsOccupied(bool isOccupied)
+	{
+		IsOccupied = isOccupied;
+	}
+
+	public void SetInsideSelectable(ISelectable seletable)
+	{
+		InsideSelectable = seletable;
+	}
+
+	public void ResetNodeVisual()
+	{
+		if(IsOccupied)
+		{
+			_nodeVisualController.SetNodeVisualAsPlaced();
+		}
+		else if(!IsOccupied)
+		{
+			_nodeVisualController.SetNodeVisualAsNormal();
+		}
+	}
+
+	public void SetNodeVisualAsUnoccupied()
+	{
+		_nodeVisualController.SetNodeVisualAsUnoccupied();
+	}
+
+	public void SetNodeVisualAsOccupied()
+	{
+		_nodeVisualController.SetNodeVisualAsOccupied();
+	}
+
+
 }

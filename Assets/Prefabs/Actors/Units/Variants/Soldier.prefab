@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6082249675001284518
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7310423800635569070, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_Name
+      value: Soldier
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805670216935024786, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805670216935024786, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805670216935024786, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805670216935024786, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805670216935024786, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805670216935024786, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805670216935024786, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805670216935024786, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805670216935024786, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805670216935024786, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805670216935024786, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937108737542259529, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: _unit
+      value: 
+      objectReference: {fileID: 8713388970000812909}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+--- !u!114 &2913407646064231663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8937108737542259529, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+  m_PrefabInstance: {fileID: 6082249675001284518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538609314469934088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8ea9cfb46c60640896a49f4a908ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3538609314469934088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7310423800635569070, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+  m_PrefabInstance: {fileID: 6082249675001284518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4231019878669553113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538609314469934088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a5ef77b1e47d1459a90476a54ebdc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8713388970000812909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538609314469934088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18fd3cdc609ab8f438ce142f68dbbaee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UnitDataSO>k__BackingField: {fileID: 0}
+  <UnitSelectable>k__BackingField: {fileID: 2913407646064231663}
+  <UnitAttacking>k__BackingField:
+    underlyingValue: {fileID: 4231019878669553113}
+  <Selectable>k__BackingField:
+    underlyingValue: {fileID: 2913407646064231663}

@@ -1,5 +1,5 @@
 
-using System;
+using Lean.Pool;
 using UnityEngine;
 
 public class BarracksFactory : BuildingFactory
@@ -9,6 +9,7 @@ public class BarracksFactory : BuildingFactory
 	#endregion
 	public override Building CreateBuilding()
 	{
-		return Instantiate(_barrackPrefab);
+		
+		return LeanPool.Spawn(_barrackPrefab, transform);
 	}
 }

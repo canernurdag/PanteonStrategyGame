@@ -11,11 +11,15 @@ public class BuildingUiPresenter : MonoBehaviour
 
 	#region REF
 	private OnBuildingUiSelected _onBuildingUiSelected;
+	private OnBuildingDeselected _onBuildingDeselected;
+	private OnPreventSelectionChanged _onPreventSelectionChanged;
 	#endregion
 
 	private void Start()
 	{
 		_onBuildingUiSelected = EventManager.Instance.GetEvent<OnBuildingUiSelected>();
+		_onBuildingDeselected = EventManager.Instance.GetEvent<OnBuildingDeselected>();
+		_onPreventSelectionChanged = EventManager.Instance.GetEvent<OnPreventSelectionChanged>();
 	}
 
 	public void Setup(BuildingDataSO buildingDataSO)
@@ -25,6 +29,8 @@ public class BuildingUiPresenter : MonoBehaviour
 		_buildingUiView.SetButtonFunction(() => 
 		{
 			_onBuildingUiSelected.Execute(buildingDataSO);
+			_onBuildingDeselected.Execute();
+			_onPreventSelectionChanged.Execute(true);
 		});
 	}
 

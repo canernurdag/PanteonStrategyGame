@@ -36,11 +36,13 @@ public class InformationUiView : MonoBehaviour
 	public void SetBuildingImage(Sprite sprite)
 	{
 		_buildingImage.sprite = sprite;
+		_buildingImage.preserveAspect = true;
 	}
 
 	public void SetProductImage(Sprite sprite)
 	{
 		_productImage.sprite = sprite;
+		_productImage.preserveAspect = true;
 	}
 
 	public void SetBuildingName(string name)

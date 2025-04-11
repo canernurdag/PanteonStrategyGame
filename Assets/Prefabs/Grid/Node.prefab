@@ -61,7 +61,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 7120773766650434538}
   _occupiedSprite: {fileID: 21300000, guid: a960caf041af2634cbd0330d583b7ed1, type: 3}
-  _unOccupiedSprite: {fileID: 21300000, guid: fad01a474acbd02498318a3c5e11cce1, type: 3}
+  _unOccupiedSprite: {fileID: 21300000, guid: c4196be7022d71446b3e56e65563f9a3, type: 3}
+  _placedSprite: {fileID: 21300000, guid: 508c330c48d0666489de991d06583489, type: 3}
+  _normalSprite: {fileID: 21300000, guid: fad01a474acbd02498318a3c5e11cce1, type: 3}
 --- !u!1 &7158801288626105447
 GameObject:
   m_ObjectHideFlags: 0
