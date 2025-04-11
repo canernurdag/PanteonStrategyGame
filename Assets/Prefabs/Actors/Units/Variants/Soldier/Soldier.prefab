@@ -15,6 +15,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5969484002860104465, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: _placeable.underlyingValue
+      value: 
+      objectReference: {fileID: 2705189469566744147}
+    - target: {fileID: 6542939062598461876, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7310423800635569070, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
       propertyPath: m_Name
       value: Soldier
@@ -63,6 +71,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8083920081978979814, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 64df2d8eab0b28542a700c33c433628e, type: 3}
+    - target: {fileID: 8083920081978979814, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8625776614211492067, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.415
@@ -89,6 +105,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+--- !u!114 &2705189469566744147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8206331099082191349, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}
+  m_PrefabInstance: {fileID: 6082249675001284518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538609314469934088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033774d2954b03e4696829b8ee0a3ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3538609314469934088 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7310423800635569070, guid: f53c7ba214db2054ab69ab687e039e75, type: 3}

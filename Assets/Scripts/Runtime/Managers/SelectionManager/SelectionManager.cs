@@ -120,12 +120,14 @@ public class SelectionManager : Singleton<SelectionManager>
 			if (_selectedFlagSpawnPoint != null) return;
 
 			var insideSelectable = nodeInsidePlaceable.Selectable.Value;
-			if (insideSelectable == null)
-			{
-				ResetSelectedBuildingAndUnit();
+			//if (insideSelectable == null)
+			//{
+			//	ResetSelectedBuildingAndUnit();
 
-				return;
-			}
+			//	return;
+			//}
+
+			ResetSelectedBuildingAndUnit();
 
 			insideSelectable.Select();
 		}

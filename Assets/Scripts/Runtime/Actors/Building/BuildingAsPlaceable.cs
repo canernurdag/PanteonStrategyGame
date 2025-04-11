@@ -8,6 +8,7 @@ public class BuildingAsPlaceable : MonoBehaviour, IPlaceable
 	#region DIRECT REF
 	[SerializeField] private Building _building;
 	[field:SerializeField] public InterfaceReference<ISelectable> Selectable { get; private set; }
+
 	#endregion
 
 	#region INTERNAL VAR

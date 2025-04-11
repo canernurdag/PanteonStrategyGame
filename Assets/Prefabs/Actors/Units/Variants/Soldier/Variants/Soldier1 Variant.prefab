@@ -15,13 +15,9 @@ PrefabInstance:
       propertyPath: _placeable.underlyingValue
       value: 
       objectReference: {fileID: 383187022208541216}
-    - target: {fileID: 2614242420231975488, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 64df2d8eab0b28542a700c33c433628e, type: 3}
-    - target: {fileID: 2614242420231975488, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
+    - target: {fileID: 1055335122718076434, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3538609314469934088, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
       propertyPath: m_Name
@@ -79,6 +75,18 @@ PrefabInstance:
       propertyPath: <Unit>k__BackingField
       value: 
       objectReference: {fileID: 148743404113039416}
+    - target: {fileID: 6274138946703604576, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.275
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274138946703604576, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.339
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274138946703604576, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.017
+      objectReference: {fileID: 0}
     - target: {fileID: 8713388970000812909, guid: afdf157de06f9564f8071fa7ba941f9e, type: 3}
       propertyPath: <UnitDataSO>k__BackingField
       value: 
